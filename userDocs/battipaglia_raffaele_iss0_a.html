@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <!--
+<link rel="stylesheet" type="text/css" href="../css/issStyle1.css">
+<script type="text/javascript" src="../css/issStyle.js"></script>
+-->
+<style type="text/css">
+body
+{
+    margin-left:  30px;
+    margin-right: 30px;
+};
+
+P
+{
+    font-family: Tahoma;
+    font-size: 10pt;
+};
+
+a, a:visited, a:active, a:link, a:hover {
+    text-decoration: underline;
+    color: #545454;
+    background-color: transparent;
+	font-size: 93%;
+}
+
+a:hover {
+    background-color: #cccccc;
+}
+
+
+hr {
+    clear: both;
+    height: 1px;
+    color: #242424;
+    background-color: transparent;
+}
+
+h1, h2, h3 {
+    color: #242424;
+    clear: left;
+    font: 100% Tahoma, Helvetica, Arial, sans-serif;
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+top {
+	width: 100%;
+}
+
+
+#i {
+    color: #ff1010;
+}
+tt{
+	font-family: "Arial";
+    font-size: 90%;
+	color: #006600;
+}
+em{
+	font-family: "Arial";
+    font-size: 80%;
+	font-weight: bold;
+	border-style:solid;
+	border-color: #abe876;
+    color: #1632cc;
+}
+bc{
+	font-family: "Arial";
+	font-size: 90%;
+	font-weight: bold;
+    color: #990000;
+	background-color: #fcf8c7;
+}
+ks{
+	font-family: "Arial";
+	font-weight: bold;
+    color: #0000CD	;
+	font-size: 90%;
+}
+kc{
+	font-family: "Arial";
+	font-weight: bold;
+    color: #008000	;
+	font-size: 90%;
+}
+pre{
+	font-family: "Consolas";
+	font-size: 85%;
+	background-color: #f5f5f5;
+	border: 1.5px solid silver;
+	padding: 5px;
+}
+m{
+	font-family: "Helvetica";
+	line-height: 100%;
+ 	font-size: 75%;
+}
+div.body{
+	 
+    font-size: 18px;
+}
+k{
+    color: #990000;
+	font-weight: bold;
+	font-size: 90%;
+}
+h1 {
+    font-size: 150%;
+    background-color: #b2c0ff;
+	padding: 10px;
+}
+
+h2 {
+    background-color: #9ed8ff;
+    font-size: 130%;
+}
+
+h3 {
+	background-color: #e6ccff;
+    font-size: 100%;
+}
+h4 {
+    background-color: #ccffcc;
+    font-size: 100%;
+	width: 95%;
+	border-radius: 5px;
+	padding: 2px;
+}
+h5 {
+    background-color: #d5ffb0;
+    font-size: 100%;
+
+}
+div.req{
+	background-color: #d9ffb3;
+    font-size: 18px;
+	width: 700px;
+    border: 3px solid green;
+    padding: 15px;
+    margin: 10px;
+}
+div.remark{
+	background-color: #E3F2FD;
+    border: 1.5px solid #d5f2ed;
+    padding: 15px;
+    margin: 10px;
+	border-radius: 25px;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+ol, ul, li {
+  margin: 0;
+  margin-left: 10px;
+  padding: 0;
+  padding-bottom: 5px;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+img {
+	border: 1.5px solid #d5f2ed
+
+}
+
+a, a:visited, a:active, a:link, a:hover {
+    text-decoration: underline;
+    color: #545454;
+    background-color: transparent;
+}
+
+div.wrapdesc{
+	width: 90%;
+	margin: auto;
+}
+
+div.imagedesc{
+	width: 85%;
+	margin: auto;
+}
+</style>
+    
+<head>
+   
+<title>TemplateToFill</title></head>
+    
+<body>
+<div id="top">
+<h1>LABORATORIO DI INGEGNERIA DEI SISTEMI SOFTWARE <font size="5"></font> </h1>
+</div>  
+
+<div class="body"> 
+<h2>Introduction</h2>
+ 
+ 
+<h2>Requirements</h2>
+
+ 
+<div class="remark">
+Design and build a software system that leads a robot to walk along the boundary of a empty, rectangular room.
+</div>
+
+ 
+
+<h2>Requirement analysis</h2>
+As a results of the <b>client interview</b>, it has been clarified that:
+<ul>
+    <li>
+        The <ks>robot</ks> is a device able to move forward, backward, turn 90 degrees on the right
+        and on the left; the robot can receive remote commands through Internet; it can detect shock using
+        two sensors, one on the front and on the back;
+        <!--
+            <a href="..\..\it.unibo.virtualRobot2020\userDocs\VirtualRobot2021.html" target="blank">VirtualRobot2021.html</a>;
+        -->
+    </li>
+    <li>
+        The robot should "<ks>walk</ks>", intended as "move forward", staying near the walls of a normal, empty room and
+        it has to clear a full lap of the perimeter of that room;
+    </li>
+</ul>
+
+<h3>User story</h3>
+<div class="remark">
+    As a user, I arrange the robot in a corner of the room facing one of the opposite walls, so that it can move to that
+    wall while following the perimeter of the room;
+</div>
+<div class="remark">
+    As a user, I launch the system, so that it automatically sends movement commands to the robot via WiFi connection to complete the task;
+</div>
+<div class="remark">
+    As a user, I expect the system to stop only after the task has been completed;
+</div>
+
+
+<h3>Test plan</h3>
+The goal is to verify if the path run by the robot matches with the perimeter of the room. <br>
+The test should be executed via software, without the needs of human interactions.
+
+<h2>Problem analysis</h2>
+<ol>
+    <li>
+        <ks>Sub-systems:</ks> the system requested can be seen as two interacting sub-systems: the client's robot,
+        which will act substantially as a server for the second sub-system, and an application (<ks>buondaryWalk</ks>)
+        responsible to send remote commands to the robot; 
+    </li>
+    <li>
+        <ks>Communications:</ks> boundaryWalk can communicate with the robot using two different protocols:
+        <ul>
+            <li>
+                HTTP protocol, sending POST messages on port 8090;
+            </li>
+            <li>
+                WebSocket protocol, sending messages to a socket on port 8091;
+            </li>
+        </ul>
+        BoundaryWalk should be built in such a way that its application logic is as independent as possible from
+        the used communication protocol.<br>
+        The messages boundaryWalk send to the robot should be in the following JSON format:<br>
+        <pre>{"robotmove":"<k>MOVE</k>", "time":"<k>T</k>"}</pre>
+        where:
+        <ul>
+            <li>
+                MOVE can be <kc>turnLeft</kc>, <kc>turnRight</kc>, <kc>moveForward</kc>, <kc>moveBackward</kc> or <kc>alarm</kc>;
+            </li>
+            <li>
+                T is a natural number which represent the duration on MOVE in milliseconds;
+            </li>
+        </ul>
+        After the execution of a move, the robot sends back, using the communication protocol used by the client, an answer 
+        containing the executed move and its results:<br>
+        <pre>{"endmove":"<k>RESULT</k>", "move":"<k>MOVE</k>"}</pre>
+        If RESULT is <kc>false</kc>, then the move has aborted (e.g. the robot has hit an obstacle).
+    </li>
+</ol>
+
+<h3>Logical architecture</h3>
+The following logical architecture of the system will use the graphic formalism depicted in 
+<a href="./img/legenda.png">legenda.png</a>:
+<br><br>
+<center>
+    <img src="./img/iss0_logicArch0.png" alt="iss0_logicArch0" width="50%">
+</center>
+
+<h2>Test plans</h2> 
+A possible strategy to test the system is stated by the following algorithm:
+<pre>for 4 times:
+    move forward until an obstacle is hit;
+    check if you are in a corner;
+    turn left;
+
+if detected 4 corners:
+    test passed
+else:
+    test failed
+</pre>
+The robot will move using short time intervals for the moveForward actions, so that it has to do more steps
+to reach the walls at the other end of the room.<br>
+When a wall is reached, the following sequence of commands can be used to check if the robot is in a corner:
+<pre><kc>FWD_1</kc>: {"robotmove":"moveForward", "time":150}
+{"robotmove":"turnRight", "time":150}
+<kc>FWD_2</kc>: {"robotmove":"moveFordward", "time":150}</pre>
+If both FWD_1 and FWD_2 moves fail, then a corner is detected.<br>
+The test is successfull if exactly 4 corner have been detected. 
+
+<h2>Project</h2> 
+
+
+<h2>Testing</h2> 
+ 
+
+<h2>Deployment</h2> 
+
+ 
+<h2>Maintenance</h2> 
+ 
+<!-- USEFUL
+<table style="width:100%" border="1">
+<tr>
+<td style="width:50%">
+</td>
+<td></td>
+</tr>
+</table>
+-->
+	      	
+<br/><br/> 	
+</div>  
+
+<div style="background-color:rgba(86, 56, 253, 0.9); width:60%;text-align:left;color:white">
+By Battipaglia Raffaele email: raffaele.battipaglia@studio.unibo.it  
+<img src="./img/io.png" width="15%" height="15%">
+</div> 
+</body>
+</html>
