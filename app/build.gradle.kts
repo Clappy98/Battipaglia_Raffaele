@@ -22,8 +22,7 @@ dependencies {
 
     // This dependency is used by the application.
     implementation("com.google.guava:guava:29.0-jre")
-
-    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+// https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
     implementation("org.apache.httpcomponents:httpclient:4.5.13")
     //JSON
     // https://mvnrepository.com/artifact/org.json/json
