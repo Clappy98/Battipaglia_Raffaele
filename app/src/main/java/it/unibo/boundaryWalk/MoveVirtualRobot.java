@@ -15,44 +15,39 @@ public class MoveVirtualRobot {
     private  final String localHostName    = "localhost";
     private  final int port                = 8090;
     private  final String URL              = "http://"+localHostName+":"+port+"/api/move";
+    private ICommunicationStrategy strategy;
 
-    public MoveVirtualRobot() { }
+    public MoveVirtualRobot() {
+        strategy = new HTTPCommunication("localhost");
+    }
+
+    public MoveVirtualRobot(ICommunicationStrategy strategy){
+        this.strategy = strategy;
+    }
 
     protected boolean sendCmd(String move, int time)  {
-        CloseableHttpClient httpclient = HttpClients.createDefault();
-        try {
-            System.out.println( move + " sendCmd "  );
-            //String json         = "{\"robotmove\":\"" + move + "\"}";
-            String json         = "{\"robotmove\":\"" + move + "\" , \"time\": " + time + "}";
-            StringEntity entity = new StringEntity(json);
-            HttpUriRequest httppost = RequestBuilder.post()
-                    .setUri(new URI(URL))
-                    .setHeader("Content-Type", "application/json")
-                    .setHeader("Accept", "application/json")
-                    .setEntity(entity)
-                    .build();
-            CloseableHttpResponse response = httpclient.execute(httppost);
-            //System.out.println( "MoveVirtualRobot | sendCmd response= " + response );
-            boolean collision = checkCollision(response);
-            return collision;
-        } catch(Exception e){
-            System.out.println("ERROR:" + e.getMessage());
+        JSONObject response = strategy.sendRequest(move, time);
+
+        if(response == null){
+            return true;
+        }
+
+        try{
+            return checkCollision(response);
+        }catch (Exception e){
             return true;
         }
     }
 
-    protected boolean checkCollision(CloseableHttpResponse response) throws Exception {
+    protected boolean checkCollision(JSONObject response) throws Exception {
         try{
-            //response.getEntity().getContent() is an InputStream
-            String jsonStr = EntityUtils.toString( response.getEntity() );
-            System.out.println( "MoveVirtualRobot | checkCollision_simple jsonStr= " +  jsonStr );
-            //jsonStr = {"endmove":true,"move":"moveForward"}
-            JSONObject jsonObj = new JSONObject(jsonStr) ;
             boolean collision = false;
-            if( jsonObj.get("endmove") != null ) {
-                collision = ! jsonObj.get("endmove").toString().equals("true");
+
+            if( response.get("endmove") != null ) {
+                collision = ! response.get("endmove").toString().equals("true");
                 System.out.println("MoveVirtualRobot | checkCollision_simple collision=" + collision);
             }
+
             return collision;
         }catch(Exception e){
             System.out.println("MoveVirtualRobot | checkCollision_simple ERROR:" + e.getMessage());
