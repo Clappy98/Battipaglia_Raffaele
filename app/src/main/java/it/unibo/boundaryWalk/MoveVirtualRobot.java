@@ -12,13 +12,10 @@ import org.json.JSONObject;
 import java.net.URI;
 
 public class MoveVirtualRobot {
-    private  final String localHostName    = "localhost";
-    private  final int port                = 8090;
-    private  final String URL              = "http://"+localHostName+":"+port+"/api/move";
     private ICommunicationStrategy strategy;
 
     public MoveVirtualRobot() {
-        strategy = new HTTPCommunication("localhost");
+        strategy = new HTTPCommunication("localhost", 8090);
     }
 
     public MoveVirtualRobot(ICommunicationStrategy strategy){

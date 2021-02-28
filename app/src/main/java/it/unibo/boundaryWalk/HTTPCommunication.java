@@ -12,13 +12,13 @@ import org.json.JSONObject;
 import java.net.URI;
 
 public class HTTPCommunication implements ICommunicationStrategy{
-    private final int port = 8090;
+    private int port = 8090;
     private String hostname;
     private String URL;
 
-    public HTTPCommunication(String hostname){
+    public HTTPCommunication(String hostname, int port){
         this.hostname = hostname;
-
+        this.port = port;
         this.URL = "http://"+this.hostname+":"+this.port+"/api/move";
     }
 
