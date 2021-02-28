@@ -22,7 +22,7 @@ public class WebsocketCommunication implements ICommunicationStrategy{
         this.hostname = hostname;
         this.port = port;
         this.URL = "ws://"+this.hostname+":"+this.port+"/api/move";
-        userSession.getBasicRemote().
+
         try{
             _connectToServer(this.URL);
         }catch(Exception e){}
