@@ -29,8 +29,9 @@ dependencies {
     implementation("org.json:json:20201115" )
 
     // websocket
-    //implementation("javax.websocket:javax.websocket-api:1.1")
-    //implementation("org.glassfish.tyrus.bundles:tyrus-standalone-client:2.0.0")  // client websocket implementation
+    implementation("javax.websocket:javax.websocket-api:1.1")
+    implementation("org.glassfish.tyrus.bundles:tyrus-standalone-client:2.0.0")  // client websocket implementation
+
 }
 
 application {

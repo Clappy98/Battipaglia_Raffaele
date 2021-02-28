@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-    <!--
+
 <link rel="stylesheet" type="text/css" href="../css/issStyle1.css">
 <script type="text/javascript" src="../css/issStyle.js"></script>
--->
+
 <style type="text/css">
 body
 {
@@ -302,25 +302,17 @@ else:
 </pre>
 The robot will move using short time intervals for the moveForward actions, so that it has to do more steps
 to reach the walls at the other end of the room.<br>
+To check if the it is in a corner, the robot has to perform extra moves besides the ones that allow it to walk
+along the perimeter of the room. This set of moves should be executed only during the test.<br>
 When a wall is reached, the following sequence of commands can be used to check if the robot is in a corner:
 <pre><kc>FWD_1</kc>: {"robotmove":"moveForward", "time":150}
 {"robotmove":"turnRight", "time":150}
 <kc>FWD_2</kc>: {"robotmove":"moveFordward", "time":150}</pre>
 If both FWD_1 and FWD_2 moves fail, then a corner is detected.<br>
-The test is successfull if exactly 4 corner have been detected. 
-
-<h2>Project</h2> 
+The test is successfull if exactly 4 corners have been detected. 
 
 
-<h2>Testing</h2> 
- 
-
-<h2>Deployment</h2> 
-
- 
-<h2>Maintenance</h2> 
- 
-<!-- USEFUL
+<br><br>
 <table style="width:100%" border="1">
 <tr>
 <td style="width:50%">
@@ -328,7 +320,6 @@ The test is successfull if exactly 4 corner have been detected.
 <td></td>
 </tr>
 </table>
--->
 	      	
 <br/><br/> 	
 </div>  
