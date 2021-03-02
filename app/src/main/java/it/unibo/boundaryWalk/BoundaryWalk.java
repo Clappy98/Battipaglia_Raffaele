@@ -1,7 +1,7 @@
 package it.unibo.boundaryWalk;
 
 public class BoundaryWalk {
-    private MoveVirtualRobot vr_controller = new MoveVirtualRobot(new HTTPCommunication("localhost", 8090));
+    private MoveVirtualRobot vr_controller = new MoveVirtualRobot(new WebsocketCommunication("localhost", 8091));
     private int step = 500;
     private int shorterStep = 150;
 
