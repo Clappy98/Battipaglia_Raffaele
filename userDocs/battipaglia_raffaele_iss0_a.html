@@ -290,9 +290,13 @@ The following logical architecture of the system will use the graphic formalism 
 
 <h2>Test plans</h2> 
 A possible strategy to test the system is stated by the following algorithm:
-<pre>for 4 times:
+<pre>int corners = 0
+
+for 4 times:
     move forward until an obstacle is hit;
     check if you are in a corner;
+    if a corner is detected:
+        corners++
     turn left;
 
 if detected 4 corners:
