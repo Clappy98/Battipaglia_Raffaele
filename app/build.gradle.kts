@@ -30,7 +30,7 @@ dependencies {
 
     // websocket
     implementation("javax.websocket:javax.websocket-api:1.1")
-    implementation("org.glassfish.tyrus.bundles:tyrus-standalone-client:2.0.0")  // client websocket implementation
+    implementation("org.glassfish.tyrus.bundles:tyrus-standalone-client:1.9")  // client websocket implementation
 
     // JSON API
     implementation("javax.json:javax.json-api:1.1.4")
