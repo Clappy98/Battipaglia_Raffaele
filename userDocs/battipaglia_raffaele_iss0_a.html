@@ -311,6 +311,31 @@ When a wall is reached, the following sequence of commands can be used to check 
 If both FWD_1 and FWD_2 moves fail, then a corner is detected.<br>
 The test is successfull if exactly 4 corners have been detected. 
 
+<h2>Project</h2>
+<center>
+    <img src=".\img\boundaryWalk.png" alt="class diagram">
+</center>
+
+<h2>Testing</h2>
+    The following is an automated test implemented using the JUnit 4 testing framework:<br>
+<pre>import org.junit.Before;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class BuondaryWalkTest {
+    private final BoundaryWalk app = new BoundaryWalk();
+
+    @Before
+    public void putRobotInStartPosition(){
+        app.resetRobot();
+    }
+
+    @Test
+    public void testRobotRunPerimeter(){
+        assertTrue(app.startWithCornerDetection() == 4);
+    }
+}
+</pre>
 
 <br><br>
 <table style="width:100%" border="1">
